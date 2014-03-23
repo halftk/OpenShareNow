@@ -13,6 +13,7 @@ def mainpage(request):
 		'titlehead': 'OpenShareNow',
 		'pagetitle': 'Welcome to the Sobres aPPlication',
 		'contentbody': 'Managing non legal funding since 2013',
+		'user': request.user
 		})
 	output = template.render(variables)
 	return HttpResponse(output)

@@ -8,14 +8,14 @@ class Item(models.Model):
 	dataCreacio= models.DateTimeField()
 	dataModificacio= models.DateTimeField()
 	usuari= models.IntegerField()
-	tipus = models.IntegerField()
+	seccio = models.IntegerField()
 	valoracio= models.IntegerField()
 
-class Tipus(models.Model):
+class Seccio(models.Model):
 	nom = models.TextField(max_length=100)
 	descripcio = models.TextField(max_length=500)
 
-class Categories(models.Model):
+class Categoria(models.Model):
 	nom = models.TextField(max_length=100)
 	descripcio = models.TextField(max_length=500)
 
@@ -23,7 +23,7 @@ class Categoria_aux(models.Model):
 	categoria = models.IntegerField()
 	item = models.IntegerField()
 
-class Usuaris(models.Model):
+class Usuari(models.Model):
 	login = models.TextField(max_length=15)
 	pwd = models.TextField(max_length=25)
 	email = models.TextField(max_length=30)
@@ -32,7 +32,7 @@ class Usuaris(models.Model):
 	dataAlta= models.DateTimeField()
 	dataNeixement= models.DateTimeField()
 
-class Comentaris(models.Model):
+class Comentari(models.Model):
 	text = models.TextField(max_length=100)
 	dataCreacio = models.DateTimeField()
 	dataModificacio = models.DateTimeField()
@@ -51,7 +51,7 @@ class Idioma_aux(models.Model):
 	item = models.IntegerField()
 	idioma = models.IntegerField()
 
-class Tags(models.Model):
+class Tag(models.Model):
 	nom = models.TextField(max_length=100)
 
 class Tags_aux(models.Model):
@@ -62,4 +62,8 @@ class Valoracio(models.Model):
 	item = models.IntegerField()
 	usuari = models.IntegerField()
 	nota = models.IntegerField(max_length=2)
+
+class Seccio_aux(models.Model):
+	seccio = models.IntegerField()
+	subseccio = models.IntegerField()
 
